@@ -1,0 +1,7 @@
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Model\obj\Debug\NextGenPOSModel.csprojResolveAssemblyReference.cache
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Model\bin\Debug\Model.dll
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Model\bin\Debug\Model.pdb
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Model\bin\Debug\Interfaces.dll
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Model\bin\Debug\Interfaces.pdb
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Model\obj\Debug\Model.dll
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Model\obj\Debug\Model.pdb

@@ -1,0 +1,4 @@
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Interfaces\bin\Debug\Interfaces.dll
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Interfaces\bin\Debug\Interfaces.pdb
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Interfaces\obj\Debug\Interfaces.dll
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Interfaces\obj\Debug\Interfaces.pdb
