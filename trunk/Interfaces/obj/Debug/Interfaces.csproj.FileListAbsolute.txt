@@ -2,3 +2,8 @@ C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Interfaces\bin\De
 C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Interfaces\bin\Debug\Interfaces.pdb
 C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Interfaces\obj\Debug\Interfaces.dll
 C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Interfaces\obj\Debug\Interfaces.pdb
+d:\Users\Torben\Documents\Visual Studio 2012\Projects\nextgenpos\Interfaces\bin\Debug\Interfaces.dll
+d:\Users\Torben\Documents\Visual Studio 2012\Projects\nextgenpos\Interfaces\bin\Debug\Interfaces.pdb
+d:\Users\Torben\Documents\Visual Studio 2012\Projects\nextgenpos\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache
+d:\Users\Torben\Documents\Visual Studio 2012\Projects\nextgenpos\Interfaces\obj\Debug\Interfaces.dll
+d:\Users\Torben\Documents\Visual Studio 2012\Projects\nextgenpos\Interfaces\obj\Debug\Interfaces.pdb

@@ -36,7 +36,7 @@ namespace Controller
           theCashier.Telephone = telephone;
 
           // Opdatere DB
-          dbf.
+          dbf.UpdateCashier(cashier_id, name, salery, telephone);
         }
 
         public void testAfModel() {
@@ -48,7 +48,7 @@ namespace Controller
             }
         }
 
-        public GrimmeTests() {
+        public void GrimmeTests() {
             testAfModel();
             dbf = new DBFacade("Data Source=10.165.150.52;Initial Catalog=nextgenPOS;Persist Security Info=True;User ID=dm122;Password=dm122");
             dbf.connectDB();
