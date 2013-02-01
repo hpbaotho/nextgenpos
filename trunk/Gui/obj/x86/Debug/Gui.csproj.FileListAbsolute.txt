@@ -16,3 +16,5 @@ C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\bin\Debug\Mod
 C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\bin\Debug\Interfaces.dll
 C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\bin\Debug\Model.pdb
 C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\bin\Debug\Interfaces.pdb
+d:\Users\Torben\Documents\Visual Studio 2012\Projects\nextgenpos\Gui\obj\x86\Debug\Gui.exe
+d:\Users\Torben\Documents\Visual Studio 2012\Projects\nextgenpos\Gui\obj\x86\Debug\Gui.pdb
