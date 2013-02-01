@@ -1,0 +1,14 @@
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\bin\Debug\Gui.exe
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\bin\Debug\Gui.pdb
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\obj\x86\Debug\MainWindow.baml
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\obj\x86\Debug\MainWindow.g.cs
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\obj\x86\Debug\App.g.cs
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\obj\x86\Debug\Gui_MarkupCompile.cache
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\obj\x86\Debug\Gui.g.resources
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\obj\x86\Debug\Gui.Properties.Resources.resources
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\obj\x86\Debug\Gui.csproj.GenerateResource.Cache
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\obj\x86\Debug\Gui.exe
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\obj\x86\Debug\Gui.pdb
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\bin\Debug\Controller.dll
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\bin\Debug\Controller.pdb
+C:\Users\moku\Documents\Visual Studio 2010\Projects\NextGenPos\Gui\obj\x86\Debug\Gui.csprojResolveAssemblyReference.cache
