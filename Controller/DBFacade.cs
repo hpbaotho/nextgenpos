@@ -145,8 +145,8 @@ namespace Controller
             parameter = new SqlParameter("@telephone", SqlDbType.VarChar, 200);
             parameter.Value = telephone;
             cmd.Parameters.Add(parameter);
-           
 
+            cmd.ExecuteNonQuery();
         }
     }
 }

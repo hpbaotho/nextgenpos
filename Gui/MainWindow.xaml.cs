@@ -31,6 +31,7 @@ namespace Gui
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             controller = new Facade();
+            controller.UpdateCashier(42, "Morten Kühnrich", 3000, "51255919");
 
         }
     }
