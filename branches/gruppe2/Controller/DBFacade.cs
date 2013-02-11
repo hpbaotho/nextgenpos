@@ -191,7 +191,11 @@ namespace Controller
         }
 
         public void DeleteCashier(ICashier c) { 
+
+            
             // Her skal jeres trylleri være der sletter i DB'EN
+                              
+
             // Slet post med id  c.Cashier_id
         }
     }
