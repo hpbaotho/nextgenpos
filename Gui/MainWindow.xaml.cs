@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Controller;
+using Interfaces;
 
 namespace Gui
 {
@@ -26,13 +27,34 @@ namespace Gui
         public MainWindow()
         {
             InitializeComponent();
+            controller = new Facade();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            controller = new Facade();
+          
             controller.UpdateCashier(42, "Morten Kühnrich", 3000, "51255919");
             controller.CreateCashier("Henning Dyremose", 50000, "123456677");
+            
+            controller.LoadCashiers(); // Load all cashiers from DB
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void exit_click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void edit_cashiers_click(object sender, RoutedEventArgs e)
+        {
+
+            WindowCashiers wc = new WindowCashiers(controller);
+
+            wc.ShowDialog();
         }
     }
 }

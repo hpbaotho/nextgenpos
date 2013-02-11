@@ -126,11 +126,28 @@ namespace Controller
         {
             CashierCollection cresult;
 
+            SqlCommand cmd = new SqlCommand("LoadCashiers", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure; // VIGTIG!!!!
+
+            SqlDataReader datareader = cmd.ExecuteReader();
+
             cresult = new CashierCollection();
 
+            while (datareader.Read()) {
+                Cashier c = new Cashier(
+                    (int) datareader["cashier_id"],
+                    (string) datareader["name"],
+                    (decimal) datareader["salery"],
+                    (string) datareader["telephone"]
+                    );
+                cresult.Add(c);
+            }
+
+            
 
 
-            return null;
+
+            return cresult;
         }
 
         public ICashier CreateCashier(string name, decimal salery, string telephone) 

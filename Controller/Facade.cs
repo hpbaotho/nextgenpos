@@ -77,8 +77,8 @@ namespace Controller
 
         }
 
-        public List<ICashier> GetCashiers() {
-            return (List<ICashier>) cashierCollection.Cast<ICashier>();
+        public IEnumerable<ICashier> GetCashiers() {
+            return  cashierCollection.Cast<ICashier>();
         }
 
     }
