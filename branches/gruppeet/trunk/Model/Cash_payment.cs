@@ -8,17 +8,17 @@ namespace NextGenPOSModel
 {
     static class Cash_payment : ICash_payment
     {
-        decimal cashBack;
-        decimal amountTendered;
-        int cashPaymentID;
+        decimal _cashBack;
+        decimal _amountTendered;
+        int _cashPaymentID;
 
-        public decimal Cash_payment(decimal amount_tendered)
+        public decimal Cash_payment(decimal amount_tendered, Sale sale)
         {
-            amountTendered = amount_tendered;
+            _amountTendered = amount_tendered;
 
-            //cashBack = amountTendered-itemPrice;
+            _cashBack = _amountTendered-sale.GetTotalPrice();
 
-            return cashBack;
+            return _cashBack;
         }
     }
 }
