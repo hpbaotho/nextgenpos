@@ -25,6 +25,10 @@ namespace Controller
 
         }
 
+        public void LoadCashiers() {
+            cashierCollection = dbf.LoadCashiers();
+        }
+
         public void CreateCashier(string name, decimal salery, string telephone) { 
             ICashier c =  dbf.CreateCashier( name,  salery,  telephone);
             cashierCollection.Add((Cashier) c);
@@ -72,5 +76,10 @@ namespace Controller
             dbf.closeDB();
 
         }
+
+        public List<ICashier> GetCashiers() {
+            return (List<ICashier>) cashierCollection.Cast<ICashier>();
+        }
+
     }
 }
