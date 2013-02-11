@@ -8,6 +8,7 @@ using System.Data; // Inkluder for DB adgang
 using Interfaces; // Adgang til vores egne interfaces
 using NextGenPOSModel; // Adgang til modellen
 
+//Hej med dig
 namespace Controller
 {
     public class DBFacade
