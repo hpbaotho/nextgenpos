@@ -121,6 +121,18 @@ namespace Controller
 
         }
 
+
+        public CashierCollection LoadCashiers()
+        {
+            CashierCollection cresult;
+
+            cresult = new CashierCollection();
+
+
+
+            return null;
+        }
+
         public ICashier CreateCashier(string name, decimal salery, string telephone) 
         {
             int cashier_id = -42;
@@ -158,6 +170,8 @@ namespace Controller
             //createCashier
             return theCashier;
         }
+
+
 
         public void UpdateCashier(int cashier_id, string name,
                       decimal salery, string telephone) {
