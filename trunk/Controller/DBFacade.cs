@@ -10,6 +10,8 @@ using NextGenPOSModel; // Adgang til modellen
 // Hej med dig,
 // hejsa
 // Aloha
+
+// nu skriver jan igen
 namespace Controller
 {
     public class DBFacade
