@@ -32,7 +32,7 @@ namespace Gui
         {
             controller = new Facade();
             controller.UpdateCashier(42, "Morten Kühnrich", 3000, "51255919");
-
+            controller.CreateCashier("Henning Dyremose", 50000, "123456677");
         }
     }
 }
