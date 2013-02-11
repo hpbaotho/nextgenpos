@@ -44,6 +44,7 @@
     <Compile Include="DBFacadeSalesLineItem.cs" />
     <Compile Include="Facade.cs" />
     <Compile Include="DBFacade.cs" />
+    <Compile Include="NyFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
