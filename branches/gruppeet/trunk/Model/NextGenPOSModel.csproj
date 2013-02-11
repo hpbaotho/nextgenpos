@@ -43,7 +43,9 @@
     <Compile Include="Cashier.cs" />
     <Compile Include="CashierCollection.cs" />
     <Compile Include="Cash_payment.cs" />
+    <Compile Include="Product_catalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sale.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
