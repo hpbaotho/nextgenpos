@@ -6,19 +6,11 @@ using Interfaces;
 
 namespace NextGenPOSModel
 {
-    public class Cash_payment : ICash_payment
+    static class Cash_payment : ICash_payment
     {
-        decimal _cashBack;
-        decimal _amountTendered;
-        int _cashPaymentID;
-
-        public decimal Cash_payment(decimal amount_tendered, Sale sale)
+        public static decimal Cash_payment(decimal amount_tendered, Sale sale)
         {
-            _amountTendered = amount_tendered;
-
-            _cashBack = _amountTendered-sale.GetTotalPrice();
-
-            return _cashBack;
+            return amount_tendered - sale.GetTotalPrice();
         }
     }
 }
