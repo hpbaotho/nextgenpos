@@ -10,6 +10,7 @@ using NextGenPOSModel; // Adgang til modellen
 // Hej med dig,
 // hejsa
 // Aloha
+// Hej SØren her
 // ** søger lige en konflikt!!
 // nu skriver jan igen
 namespace Controller
