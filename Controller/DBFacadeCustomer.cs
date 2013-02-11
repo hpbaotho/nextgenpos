@@ -14,6 +14,30 @@ namespace Controller
         string ConnectionString { get; set; }
         SqlConnection dbconn;
 
+        public DBFacadeCustomer(string connectionstring)
+        {
+            ConnectionString = connectionstring;
+        }
+
+        public bool connectDB()
+        {
+            bool result;
+
+            try
+            {
+                dbconn = new SqlConnection(ConnectionString);
+                dbconn.Open();
+                Console.WriteLine("Sql server version " + dbconn.ServerVersion);
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                result = false;
+            }
+            return result;
+        }
+
         public ICustomer CreateCustomer(string firstName, string lastName, string addressLine, string fk_zipCode)
         {
             int customer_id = 1;

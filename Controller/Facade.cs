@@ -11,17 +11,23 @@ namespace Controller
     public class Facade
     {
         DBFacade dbf;
+        DBFacadeCustomer dbfCustomer;
 
         CashierCollection cashierCollection;
+        CustomerCollection customerCollection;
 
         public Facade()
         {
             dbf = new DBFacade("Data Source=10.165.150.52;Initial Catalog=nextgenPOS;Persist Security Info=True;User ID=dm122;Password=dm122");
             dbf.connectDB();
+            dbfCustomer = new DBFacadeCustomer("Data Source=10.165.150.52;Initial Catalog=nextgenPOS;Persist Security Info=True;User ID=dm122;Password=dm122")
+            dbfCustomer.connectDB();
             cashierCollection = new CashierCollection();
             Cashier c = new Cashier(42, "Morten", 59000m, "51255919");
             cashierCollection.Add(c);
+            CustomerCollection cc = new CustomerCollection();
             //            dbf.closeDB();
+            //            dbfCustomer.closeDB();
 
         }
 
@@ -71,6 +77,13 @@ namespace Controller
             dbf.SearchForCashierBetterWay("henning");
             dbf.closeDB();
 
+        }
+
+        public void CreateCustomer(string firstName, string lastName, string addressLine, string fk_zipCode)
+        {
+           ICustomer c = dbfCustomer.CreateCustomer(firstName, lastName, addressLine, fk_zipCode);
+
+           customerCollection.Add((Customer)c);
         }
     }
 }
