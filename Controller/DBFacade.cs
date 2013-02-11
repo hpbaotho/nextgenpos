@@ -11,7 +11,7 @@ using NextGenPOSModel; // Adgang til modellen
 namespace Controller
 {
     public class DBFacade
-    {
+    { // Jan Writes subversion comment here
         string ConnectionString { get; set; }
         SqlConnection dbconn;
 
