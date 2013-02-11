@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ICashier.cs" />
     <Compile Include="ICustomer.cs" />
+    <Compile Include="IStore.cs" />
     <Compile Include="ISalesLineItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
