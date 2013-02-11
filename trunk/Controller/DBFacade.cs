@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data; // Inkluder for DB adgang
-
 using Interfaces; // Adgang til vores egne interfaces
 using NextGenPOSModel; // Adgang til modellen
 
 // Hej med dig,
 // hejsa
+// Aloha
 namespace Controller
 {
     public class DBFacade
