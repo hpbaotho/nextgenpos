@@ -6,7 +6,7 @@ using Interfaces;
 
 namespace NextGenPOSModel
 {
-    static class Cash_payment : ICash_payment
+    public class Cash_payment : ICash_payment
     {
         decimal _cashBack;
         decimal _amountTendered;
