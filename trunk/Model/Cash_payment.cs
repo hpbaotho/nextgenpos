@@ -12,9 +12,8 @@ namespace NextGenPOSModel
         decimal amountTendered;
         int cashPaymentID;
 
-        public decimal Cash_payment(int id,decimal amount_tendered)
+        public decimal Cash_payment(decimal amount_tendered)
         {
-            cashPaymentID = id;
             amountTendered = amount_tendered;
 
             //cashBack = amountTendered-itemPrice;
