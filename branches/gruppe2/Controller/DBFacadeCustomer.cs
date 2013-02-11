@@ -72,7 +72,7 @@ namespace Controller
             cmd.Parameters.Add(parameter);
             cmd.ExecuteNonQuery();
 
-            customer_id = (int)cmd.Parameters["@customer_id"].Value;
+            customer_id = (int)cmd.Parameters["@customerID"].Value;
 
 
             Customer theCustomer = new Customer(customer_id, firstName, lastName, addressLine, fk_zipCode);
