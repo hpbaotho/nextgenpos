@@ -7,7 +7,7 @@ namespace Interfaces
 
         DateTime _dateTime {get; }
         decimal _total {get; }
-        ICash_payment ICash_paymentList { get; }
+        
        
 
     }
