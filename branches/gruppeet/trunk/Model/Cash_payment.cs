@@ -7,6 +7,6 @@ namespace NextGenPOSModel
 {
     class Cash_payment
     {
-
+        int amountTendered;
     }
 }

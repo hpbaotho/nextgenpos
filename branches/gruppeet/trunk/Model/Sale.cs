@@ -7,5 +7,7 @@ namespace NextGenPOSModel
 {
     class Sale
     {
+        DateTime dateTime;
+        int total;
     }
 }
