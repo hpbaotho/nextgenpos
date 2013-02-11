@@ -13,6 +13,7 @@ namespace Controller
         DBFacade dbf;
 
         CashierCollection cashierCollection;
+        ItemCollection itemCollection;
 
         public Facade()
         {
@@ -21,6 +22,8 @@ namespace Controller
             cashierCollection = new CashierCollection();
             Cashier c = new Cashier(42, "Morten", 59000m, "51255919");
             cashierCollection.Add(c);
+
+            itemCollection = new ItemCollection();
             //            dbf.closeDB();
 
         }
@@ -72,5 +75,16 @@ namespace Controller
             dbf.closeDB();
 
         }
+
+        public void CreateItem(int itemID, int itemStoreQuantity)
+        {
+            IItem i = dbf.CreateItem(itemID, itemStoreQuantity);
+            itemCollection.Add((Item)i);
+            
+        }
+
+       
     }
+
+
 }

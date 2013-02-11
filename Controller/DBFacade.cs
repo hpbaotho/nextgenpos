@@ -20,9 +20,10 @@ namespace Controller
             ConnectionString = connectionstring;
         }
 
-        public bool connectDB() {
+        public bool connectDB()
+        {
             bool result;
-            
+
             try
             {
                 dbconn = new SqlConnection(ConnectionString);
@@ -30,19 +31,22 @@ namespace Controller
                 Console.WriteLine("Sql server version " + dbconn.ServerVersion);
                 result = true;
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Console.WriteLine(ex.Message);
                 result = false;
             }
             return result;
         }
 
-        public void closeDB() {
+        public void closeDB()
+        {
             dbconn.Close();
         }
 
 
-        public void GetDataTest() {
+        public void GetDataTest()
+        {
             SqlCommand cmd;     // Bruges til at lave sql commandoer mod DMBMS'et
             SqlDataReader myreader; // Bruges til at få returværdier fra DMBMS'et
 
@@ -50,7 +54,7 @@ namespace Controller
 
             myreader = cmd.ExecuteReader();
 
-            while (myreader.Read()) 
+            while (myreader.Read())
             {
                 Console.Write(myreader["cashier_id"].ToString() + " ");
                 Console.Write(myreader["name"].ToString() + " ");
@@ -63,7 +67,8 @@ namespace Controller
         }
 
 
-        public void SearchForCashierUglyWay(string searchtext) {
+        public void SearchForCashierUglyWay(string searchtext)
+        {
             SqlCommand cmd;     // Bruges til at lave sql commandoer mod DMBMS'et
             SqlDataReader myreader; // Bruges til at få returværdier fra DMBMS'et
 
@@ -86,21 +91,22 @@ namespace Controller
 
             }
 
-        
+
         }
 
 
         public void SearchForCashierBetterWay(string searchtext)
         {
-            SqlCommand    cmd;     // Bruges til at lave sql commandoer mod DMBMS'et
+            SqlCommand cmd;     // Bruges til at lave sql commandoer mod DMBMS'et
             SqlDataReader myreader; // Bruges til at få returværdier fra DMBMS'et
             SqlParameter parameter = new SqlParameter("@searchparam", SqlDbType.NVarChar, 30);
 
             string sqlString = "select * from cashier where lower(name) like '%' + @searchparam + '%'";
 
-            if (searchtext.Length > 30) {
-             searchtext = searchtext.Substring(0,30);
-            } 
+            if (searchtext.Length > 30)
+            {
+                searchtext = searchtext.Substring(0, 30);
+            }
             parameter.Value = searchtext;
 
             cmd = new SqlCommand(sqlString, dbconn);
@@ -121,7 +127,7 @@ namespace Controller
 
         }
 
-        public ICashier CreateCashier(string name, decimal salery, string telephone) 
+        public ICashier CreateCashier(string name, decimal salery, string telephone)
         {
             int cashier_id = -42;
 
@@ -129,7 +135,7 @@ namespace Controller
             // "createCashier" - Navn på den gemte procedure i DB'en
             SqlCommand cmd = new SqlCommand("createCashier", dbconn);
             cmd.CommandType = CommandType.StoredProcedure; // VIGTIG!!!!
-           
+
             SqlParameter parameter;
 
             parameter = new SqlParameter("@cashier_id", SqlDbType.Int);
@@ -150,7 +156,7 @@ namespace Controller
             cmd.Parameters.Add(parameter);
             cmd.ExecuteNonQuery();
 
-            cashier_id = (int) cmd.Parameters["@cashier_id"].Value;
+            cashier_id = (int)cmd.Parameters["@cashier_id"].Value;
 
             ICashier theCashier = new Cashier(cashier_id, name, salery, telephone);
 
@@ -160,14 +166,15 @@ namespace Controller
         }
 
         public void UpdateCashier(int cashier_id, string name,
-                      decimal salery, string telephone) {
+                      decimal salery, string telephone)
+        {
             SqlCommand cmd;     // Bruges til at lave sql commandoer mod DMBMS'et
             SqlParameter parameter;
-            
-            
+
+
             string sqlString = "update cashier set name = @name, salery = @salery, telephone = @telephone where cashier_id = @cashier_id";
 
-           
+
 
             cmd = new SqlCommand(sqlString, dbconn);
 
@@ -190,9 +197,31 @@ namespace Controller
             cmd.ExecuteNonQuery();
         }
 
-        public void DeleteCashier(ICashier c) { 
+        public void DeleteCashier(ICashier c)
+        {
             // Her skal jeres trylleri være der sletter i DB'EN
             // Slet post med id  c.Cashier_id
+        }
+
+
+        public IItem CreateItem(int itemID, int itemStoreQuantity)
+        {
+            SqlCommand cmd = new SqlCommand("create Item", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parameter;
+                
+            parameter = new SqlParameter("@itemID", SqlDbType.Int);
+            parameter.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(parameter);
+
+            parameter = new SqlParameter("@itemStoreQuantity", SqlDbType.Int);
+            parameter.Value = itemStoreQuantity;
+            cmd.Parameters.Add(parameter);
+
+            IItem TheItem = new Item(itemID, itemStoreQuantity);
+
+            return TheItem;
         }
     }
 }
