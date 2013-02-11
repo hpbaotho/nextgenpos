@@ -8,11 +8,12 @@ namespace NextGenPOSModel
     class Sale
     {
         DateTime dateTime;
-        decimal _total;
+        decimal total;
+        int sale_id;
 
         public decimal GetTotalPrice()
         {
-            return _total;
+            return total;
         }
 
         public decimal Pay(string betalings_type,decimal cash_amount)
