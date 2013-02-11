@@ -40,8 +40,7 @@ namespace Controller
 
         public ICustomer CreateCustomer(string firstName, string lastName, string addressLine, string fk_zipCode)
         {
-            int customer_id = 1;
-
+            int customer_id = 10;
             // Bruges til at lave sql commandoer mod DMBMS'et
             // "CreateCustomer" - Navn på den gemte procedure i DB'en
             SqlCommand cmd = new SqlCommand("CreateCustomer", dbconn);
