@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Interfaces;
 
-namespace NextGenPOSModel
+namespace Interfaces
 {
-    class Cash_payment : ICash_payment
+    class ICash_payment
     {
-        int amountTendered;
+
     }
 }
