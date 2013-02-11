@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Cashier.cs" />
     <Compile Include="CashierCollection.cs" />
+    <Compile Include="Cash_payment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
