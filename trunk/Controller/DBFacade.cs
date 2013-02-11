@@ -5,6 +5,9 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data; // Inkluder for DB adgang
 
+using Interfaces; // Adgang til vores egne interfaces
+using NextGenPOSModel; // Adgang til modellen
+
 namespace Controller
 {
     public class DBFacade
@@ -118,6 +121,44 @@ namespace Controller
 
         }
 
+        public ICashier CreateCashier(string name, decimal salery, string telephone) 
+        {
+            int cashier_id = -42;
+
+            // Bruges til at lave sql commandoer mod DMBMS'et
+            // "createCashier" - Navn på den gemte procedure i DB'en
+            SqlCommand cmd = new SqlCommand("createCashier", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure; // VIGTIG!!!!
+           
+            SqlParameter parameter;
+
+            parameter = new SqlParameter("@cashier_id", SqlDbType.Int);
+            //parameter.Value = DBNull.Value;
+            parameter.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(parameter);
+
+            parameter = new SqlParameter("@name", SqlDbType.NVarChar, 30);
+            parameter.Value = name;
+            cmd.Parameters.Add(parameter);
+
+            parameter = new SqlParameter("@salery", SqlDbType.Decimal);
+            parameter.Value = salery;
+            cmd.Parameters.Add(parameter);
+
+            parameter = new SqlParameter("@telephone", SqlDbType.VarChar, 200);
+            parameter.Value = telephone;
+            cmd.Parameters.Add(parameter);
+            cmd.ExecuteNonQuery();
+
+            cashier_id = (int) cmd.Parameters["@cashier_id"].Value;
+
+            ICashier theCashier = new Cashier(cashier_id, name, salery, telephone);
+
+
+            //createCashier
+            return theCashier;
+        }
+
         public void UpdateCashier(int cashier_id, string name,
                       decimal salery, string telephone) {
             SqlCommand cmd;     // Bruges til at lave sql commandoer mod DMBMS'et
@@ -147,6 +188,11 @@ namespace Controller
             cmd.Parameters.Add(parameter);
 
             cmd.ExecuteNonQuery();
+        }
+
+        public void DeleteCashier(ICashier c) { 
+            // Her skal jeres trylleri være der sletter i DB'EN
+            // Slet post med id  c.Cashier_id
         }
     }
 }

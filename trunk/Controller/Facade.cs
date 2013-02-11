@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using NextGenPOSModel; // Inkluder namespace for vores model
+using NextGenPOSModel;
+using Interfaces; // Inkluder namespace for vores model
 
 namespace Controller
 {
@@ -23,7 +24,20 @@ namespace Controller
             //            dbf.closeDB();
 
         }
-  
+
+        public void CreateCashier(string name, decimal salery, string telephone) { 
+            ICashier c =  dbf.CreateCashier( name,  salery,  telephone);
+            cashierCollection.Add((Cashier) c);
+        }
+
+        public void DeleteCashier(ICashier c)
+        { 
+             // Kald til DB...
+            dbf.DeleteCashier(c);
+            
+            // Opdater model
+            cashierCollection.Remove((Cashier) c);
+        }
 
         public void UpdateCashier(int cashier_id, string name,
                        decimal salery, string telephone) { 
