@@ -5,9 +5,9 @@ namespace Interfaces
    public class ISale
     {
 
-        DateTime _dateTime {get; }
-        decimal _total {get; }
-        
+        DateTime dateTime {get; }
+        decimal total {get; }
+        int id { get; }
        
 
     }
