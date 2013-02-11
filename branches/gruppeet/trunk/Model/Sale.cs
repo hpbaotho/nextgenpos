@@ -9,7 +9,7 @@ namespace NextGenPOSModel
     {
         DateTime dateTime;
         decimal _total;
-        List<Cash_payment> cash_paymets = new List<Cash_payment>();
+        List<Cash_payment> cash_payments = new List<Cash_payment>();
 
         public decimal GetTotalPrice()
         {
@@ -21,7 +21,7 @@ namespace NextGenPOSModel
             decimal cash_back;
             Cash_payment current_cash = new Cash_payment();
             cash_back = current_cash.Cash_payment(cash_amount,this);
-            cash_paymets.Add(current_cash);
+            cash_payments.Add(current_cash);
             return cash_back;
         }
     }
