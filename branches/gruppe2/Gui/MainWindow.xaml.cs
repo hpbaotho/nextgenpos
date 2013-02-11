@@ -21,7 +21,9 @@ namespace Gui
     /// </summary>
     public partial class MainWindow : Window
     {
-        Facade controller;
+        //Facade controller;
+        private NyFacade controller;
+        private DBFacadeSalesLineItem dbfSalesLineItem;
 
         public MainWindow()
         {
@@ -30,10 +32,15 @@ namespace Gui
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            controller = new Facade();
+            //controller = new Facade();
+            //controller.CreateCustomer("Søren", "Pedersen", "Odensevej", "5000");
 
+            controller = new NyFacade();
+            
+            dbfSalesLineItem = new DBFacadeSalesLineItem(controller.dbconn);
+            dbfSalesLineItem.CreateSalesLineItem(12, 1, 1);
 
-            controller.CreateCustomer("Søren", "Pedersen", "Odensevej", "5000");
+            controller.CloseDB();
         }
     }
 }

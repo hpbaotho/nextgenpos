@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Cashier.cs" />
     <Compile Include="CashierCollection.cs" />
+    <Compile Include="SalesLineItemCollection.cs" />
     <Compile Include="Store.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerCollection.cs" />
