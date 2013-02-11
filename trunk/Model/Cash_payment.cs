@@ -6,8 +6,20 @@ using Interfaces;
 
 namespace NextGenPOSModel
 {
-    class Cash_payment : ICash_payment
+    static class Cash_payment : ICash_payment
     {
-        int amountTendered;
+        decimal cashBack;
+        decimal amountTendered;
+        int cashPaymentID;
+
+        public decimal Cash_payment(int id,decimal amount_tendered)
+        {
+            cashPaymentID = id;
+            amountTendered = amount_tendered;
+
+            //cashBack = amountTendered-itemPrice;
+
+            return cashBack;
+        }
     }
 }
