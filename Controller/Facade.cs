@@ -20,7 +20,8 @@ namespace Controller
             dbf = new DBFacade("Data Source=10.165.150.52;Initial Catalog=nextgenPOS;Persist Security Info=True;User ID=dm122;Password=dm122");
             dbf.connectDB();
             cashierCollection = new CashierCollection();
-            Cashier c = new Cashier(42, "Morten", 59000m, "51255919");
+            //Cashier c = new Cashier(42, "Morten", 59000m, "51255919");
+            Cashier c = new Cashier(40004, "Kærsten Kühnrich", 3000, "51255919");
             cashierCollection.Add(c);
 
             itemCollection = new ItemCollection();
@@ -31,6 +32,26 @@ namespace Controller
         public void CreateCashier(string name, decimal salery, string telephone) { 
             ICashier c =  dbf.CreateCashier( name,  salery,  telephone);
             cashierCollection.Add((Cashier) c);
+        }
+
+        public List<ICashier> Test()
+        {
+            List<ICashier> iCashierList = new List<ICashier>();
+
+
+            foreach (Cashier item in cashierCollection)
+            {
+                iCashierList.Add((ICashier) item);
+            }
+
+            return iCashierList;
+        }
+
+
+        public ICashier TestDeleteCashier()
+        {
+
+            return null;
         }
 
         public void DeleteCashier(ICashier c)

@@ -168,15 +168,16 @@ namespace Controller
         public void UpdateCashier(int cashier_id, string name,
                       decimal salery, string telephone)
         {
-            SqlCommand cmd;     // Bruges til at lave sql commandoer mod DMBMS'et
+              // Bruges til at lave sql commandoer mod DMBMS'et
+
+            
+
+            SqlCommand cmd = new SqlCommand("UpdateCashier", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure; // VIGTIG!!!!
+            
             SqlParameter parameter;
+                  
 
-
-            string sqlString = "update cashier set name = @name, salery = @salery, telephone = @telephone where cashier_id = @cashier_id";
-
-
-
-            cmd = new SqlCommand(sqlString, dbconn);
 
             parameter = new SqlParameter("@cashier_id", SqlDbType.Int);
             parameter.Value = cashier_id;
@@ -200,7 +201,20 @@ namespace Controller
         public void DeleteCashier(ICashier c)
         {
             // Her skal jeres trylleri være der sletter i DB'EN
+            
+            SqlCommand cmd = new SqlCommand("DeleteCashier", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure; // VIGTIG!!!!
+
+            SqlParameter parameter;
+            
             // Slet post med id  c.Cashier_id
+            parameter = new SqlParameter("@cashier_id", SqlDbType.Int);
+            parameter.Value = c.Cashier_id;
+            cmd.Parameters.Add(parameter);
+
+            cmd.ExecuteNonQuery();
+
+           
         }
 
 
