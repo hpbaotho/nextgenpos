@@ -10,13 +10,13 @@ namespace Controller
 {
     public class Facade
     {
-        DBFacade dbf;
+        DBFacadeCashier dbf;
 
         CashierCollection cashierCollection;
 
         public Facade()
         {
-            dbf = new DBFacade("Data Source=10.165.150.52;Initial Catalog=nextgenPOS;Persist Security Info=True;User ID=dm122;Password=dm122");
+            dbf = new DBFacadeCashier("Data Source=10.165.150.52;Initial Catalog=nextgenPOS;Persist Security Info=True;User ID=dm122;Password=dm122");
             dbf.connectDB();
             cashierCollection = new CashierCollection();
             Cashier c = new Cashier(42, "Morten", 59000m, "51255919");
@@ -68,11 +68,10 @@ namespace Controller
 
         public void GrimmeTests() {
             testAfModel();
-            dbf = new DBFacade("Data Source=10.165.150.52;Initial Catalog=nextgenPOS;Persist Security Info=True;User ID=dm122;Password=dm122");
+            dbf = new DBFacadeCashier("Data Source=10.165.150.52;Initial Catalog=nextgenPOS;Persist Security Info=True;User ID=dm122;Password=dm122");
             dbf.connectDB();
             //dbf.GetDataTest();
             //dbf.SearchForCashierUglyWay("henning");
-            dbf.SearchForCashierBetterWay("henning");
             dbf.closeDB();
 
         }
