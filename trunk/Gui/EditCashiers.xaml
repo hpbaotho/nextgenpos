@@ -1,9 +1,9 @@
 ﻿<Window x:Class="Gui.EditCashiers"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="EditCashiers" Height="300" Width="685" Loaded="Window_Loaded">
+        Title="EditCashiers" Height="465" Width="863" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid AutoGenerateColumns="False" Height="200" HorizontalAlignment="Left" Margin="12,23,0,0" Name="dataGridCashier" VerticalAlignment="Top" Width="513" SelectionChanged="dataGridCashier_SelectionChanged">
+        <DataGrid AutoGenerateColumns="False" Height="200" HorizontalAlignment="Left" Margin="12,23,0,0" Name="dataGridCashier" VerticalAlignment="Top" Width="513" SelectionChanged="dataGridCashier_SelectionChanged" RowEditEnding="dataGridCashier_RowEditEnding" ManipulationCompleted="dataGridCashier_ManipulationCompleted" CellEditEnding="dataGridCashier_CellEditEnding">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
             <DataGridTextColumn Header="Salery" Binding="{Binding Salery}"/>
@@ -11,5 +11,9 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="DeleteCashier" Height="23" HorizontalAlignment="Left" Margin="555,55,0,0" Name="buttonDeleteCashier" VerticalAlignment="Top" Width="87" Click="buttonDeleteCashier_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="39,261,0,0" Name="textBoxName" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="39,302,0,0" Name="textBoxSalery" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="39,346,0,0" Name="textBoxTelephone" VerticalAlignment="Top" Width="120" />
+        <Button Content="Correct cashier" Height="23" HorizontalAlignment="Left" Margin="555,100,0,0" Name="buttonCorrectCashier" VerticalAlignment="Top" Width="87" Click="buttonCorrectCashier_Click" />
     </Grid>
 </Window>
