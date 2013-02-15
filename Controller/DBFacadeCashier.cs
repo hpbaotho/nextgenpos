@@ -68,7 +68,7 @@ namespace Controller
                 Console.WriteLine(myreader["telephone"].ToString() + " ");
 
             }
-
+            myreader.Close();
 
         }
 
@@ -181,7 +181,7 @@ namespace Controller
                     (string) myreader["telephone"]);
                 cashiers.Add(c);
             }
-
+            myreader.Close();
             return cashiers;
         }
 

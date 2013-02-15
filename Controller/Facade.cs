@@ -12,7 +12,9 @@ namespace Controller
     {
         DBFacadeCashier dbf;
 
+        /* Alt for cashiers */
         CashierCollection cashierCollection;
+        public ICashier actualCashier {get; set;}
 
         public Facade()
         {
@@ -26,12 +28,22 @@ namespace Controller
         }
 
         public List<ICashier> LoadCashiers() {
-            return dbf.LoadCashiers();
+            List<ICashier> cashiers;
+            
+            cashiers = dbf.LoadCashiers();
+
+            cashierCollection.Clear();
+
+            // Cashier collection i model lag
+            cashierCollection.AddRange(cashiers.Cast<Cashier>());
+
+            return cashiers;
         }
 
         public void CreateCashier(string name, decimal salery, string telephone) { 
             ICashier c =  dbf.CreateCashier( name,  salery,  telephone);
             cashierCollection.Add((Cashier) c);
+            actualCashier = c;
         }
 
         public void DeleteCashier(ICashier c)
@@ -52,6 +64,9 @@ namespace Controller
           theCashier.Name = name;
           theCashier.Salery = salery;
           theCashier.Telephone = telephone;
+
+          actualCashier = theCashier;
+           
 
           // Opdatere DB
           dbf.UpdateCashier(cashier_id, name, salery, telephone);
