@@ -10,12 +10,12 @@ using NextGenPOSModel; // Adgang til modellen
 
 namespace Controller
 {
-    public class DBFacadeCashier
+    public class DBFacadetest
     { // Jan Writes subversion comment here
         string ConnectionString { get; set; }
         SqlConnection dbconn;
 
-        public DBFacadeCashier(string connectionstring)
+        public DBFacadetest(string connectionstring)
         {
             ConnectionString = connectionstring;
         }
