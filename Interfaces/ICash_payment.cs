@@ -2,7 +2,7 @@
 
 namespace Interfaces
 {
-   public class ICash_payment
+   public interface ICash_payment
     {
 
         int _cashPaymentID { get; }

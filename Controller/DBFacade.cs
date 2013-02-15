@@ -190,9 +190,49 @@ namespace Controller
             cmd.ExecuteNonQuery();
         }
 
-        public void DeleteCashier(ICashier c) { 
+        public void DeleteCashier(ICashier c)
+        {
             // Her skal jeres trylleri være der sletter i DB'EN
+            
+            SqlCommand cmd = new SqlCommand("DeleteCashier", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure; // VIGTIG!!!!
+
+            SqlParameter parameter;
+            
             // Slet post med id  c.Cashier_id
+            parameter = new SqlParameter("@cashier_id", SqlDbType.Int);
+            parameter.Value = c.Cashier_id;
+            cmd.Parameters.Add(parameter);
+
+            cmd.ExecuteNonQuery();
+
+           
         }
+
+        public List<ICashier> LoadCashiers()
+        {
+            List<ICashier> cashiers = new List<ICashier>();
+
+            SqlCommand cmd = new SqlCommand("LoadCashiers", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure; // VIGTIG!!!!
+
+          
+           
+
+            SqlDataReader myreader = cmd.ExecuteReader();
+
+            while (myreader.Read())
+            {
+                ICashier c = new Cashier(
+                    (int) myreader["cashier_id"],
+                    (string) myreader["name"],
+                    (decimal) myreader["salery"],
+                    (string) myreader["telephone"]);
+                cashiers.Add(c);
+            }
+
+            return cashiers;
+        }
+
     }
 }

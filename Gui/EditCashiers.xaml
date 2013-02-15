@@ -1,0 +1,14 @@
+﻿<Window x:Class="Gui.EditCashiers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EditCashiers" Height="300" Width="580" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" Height="200" HorizontalAlignment="Left" Margin="12,23,0,0" Name="dataGridCashier" VerticalAlignment="Top" Width="513" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+            <DataGridTextColumn Header="Salery" Binding="{Binding Salery}"/>
+            <DataGridTextColumn Header="Telephone" Binding="{Binding Telephone}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
