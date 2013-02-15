@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Interfaces;
 
 namespace Gui
 {
@@ -34,8 +35,26 @@ namespace Gui
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("test");
             dataGridCashier.ItemsSource = controller.LoadCashiers();
+        }
+
+        private void dataGridCashier_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            controller.actualCashier = (ICashier)dataGridCashier.CurrentItem; 
+        }
+
+        private void buttonDeleteCashier_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            if (controller.actualCashier != null)
+            {
+                controller.DeleteCashier(controller.actualCashier);
+                dataGridCashier.ItemsSource = null;
+                dataGridCashier.ItemsSource = controller.LoadCashiers();
+            }
+            //dataGridCashier.Items.Refresh();
+            
         }
     }
 }
