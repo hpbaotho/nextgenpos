@@ -2,7 +2,7 @@
 
 namespace Interfaces
 {
-   public class ISale
+   public interface ISale
     {
 
         DateTime dateTime {get; }

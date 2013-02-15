@@ -25,6 +25,10 @@ namespace Controller
 
         }
 
+        public List<ICashier> LoadCashiers() {
+            return dbf.LoadCashiers();
+        }
+
         public void CreateCashier(string name, decimal salery, string telephone) { 
             ICashier c =  dbf.CreateCashier( name,  salery,  telephone);
             cashierCollection.Add((Cashier) c);

@@ -26,13 +26,26 @@ namespace Gui
         public MainWindow()
         {
             InitializeComponent();
+            controller = new Facade();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            controller = new Facade();
+            
             controller.UpdateCashier(42, "Morten Kühnrich", 3000, "51255919");
             controller.CreateCashier("Henning Dyremose", 50000, "123456677");
+        }
+
+        private void exit_click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void edit_cashiers_click(object sender, RoutedEventArgs e)
+        {
+            EditCashiers ec = new EditCashiers(controller);
+
+            ec.Show();
         }
     }
 }
